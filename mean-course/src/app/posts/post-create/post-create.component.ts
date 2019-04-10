@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { post } from "selenium-webdriver/http";
 
 @Component({
     selector: 'app-post-create',
@@ -8,9 +7,11 @@ import { post } from "selenium-webdriver/http";
 
 export class PostCreateComponent {
     
+    enteredValue = ""
+
     newPost = "NO CONTENT"
 
     onAddPost(postInput: HTMLTextAreaElement){
-        this.newPost =  postInput.value    
+        this.newPost =  this.enteredValue;
     }
 }
