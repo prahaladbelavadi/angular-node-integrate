@@ -57,7 +57,6 @@ app.get("/api/posts", (req, res, next) => {
         });
   });
 
-
 });
 
 module.exports = app;
