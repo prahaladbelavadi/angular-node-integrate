@@ -10,7 +10,7 @@ export class PostsService {
   private posts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getPosts() {
     this.http
@@ -18,13 +18,13 @@ export class PostsService {
         "http:///localhost:3000/api/posts"
       )
       .pipe(map((postData) => {
-            return postData.posts.map(post=>{
-                return {
-                    title:post.title,
-                    content: post.content,
-                    id : post._id
-                }
-            })
+        return postData.posts.map(post => {
+          return {
+            title: post.title,
+            content: post.content,
+            id: post._id
+          }
+        })
       }))
       .subscribe(transformedPosts => {
         this.posts = transformedPosts;
@@ -48,14 +48,14 @@ export class PostsService {
       });
   }
 
-deletePost(postId: string){
+  deletePost(postId: string) {
     this.http.delete("http://localhost:3000/api/posts/" + postId)
-    .subscribe(()=>{
-        const updatedPosts = this.posts.filter(post=>post.id !== postId);
+      .subscribe(() => {
+        const updatedPosts = this.posts.filter(post => post.id !== postId);
         this.posts = updatedPosts;
         this.postsUpdated.next([...this.posts])
-    })
-}
+      })
+  }
 
 
 }
