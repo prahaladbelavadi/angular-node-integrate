@@ -11,7 +11,8 @@ import {
   MatCardModule, 
   MatButtonModule, 
   MatToolbarModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatProgressSpinnerModule
 } from "@angular/material";
 
 import { AppComponent } from './app.component';
@@ -31,12 +32,14 @@ import { PostListComponent } from './posts/post-list/post-list.component'
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatProgressSpinnerModule,
     MatInputModule,
     MatCardModule, 
     MatButtonModule, 
     MatToolbarModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
