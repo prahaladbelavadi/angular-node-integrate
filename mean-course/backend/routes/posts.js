@@ -10,17 +10,6 @@ router.post("", (req, res, next) => {
         content: req.body.content
     });
 
-    router.put("/:id", (req, res, next) => {
-        const post = new Post({
-            _id: req.body.id,
-            title: req.body.title,
-            content: req.body.content
-        })
-        Post.updateOne({ _id: req.params.id }, post.then(result => {
-            res.status(200).json({ message: "update successful" });
-        }))
-    })
-
     post.save().then(result => {
         console.log(result)
         res.status(201).json({
@@ -28,9 +17,19 @@ router.post("", (req, res, next) => {
             postId: result._id
         });
     });
-
-
 });
+
+
+router.put("/:id", (req, res, next) => {
+    const post = new Post({
+        _id: req.body.id,
+        title: req.body.title,
+        content: req.body.content
+    })
+    Post.updateOne({ _id: req.params.id }, post.then(result => {
+        res.status(200).json({ message: "update successful" });
+    }))
+})
 
 router.get("", (req, res, next) => {
     Post.find().then(documents => {
