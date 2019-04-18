@@ -1,20 +1,21 @@
-:host{
-    display: block;
-    margin-top: 1em;
-}
-.info-text{
-    text-align: center;
+:host {
+  display: block;
+  margin-top: 1rem;
 }
 
 mat-spinner {
-    margin: auto
+  margin: auto;
 }
 
-.post-image{
-    width: 100%
+.info-text {
+  text-align: center;
 }
 
-.post-image img{
-    width: 100%;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 5) 
+.post-image {
+  width: 100%;
+}
+
+.post-image img {
+  width: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
