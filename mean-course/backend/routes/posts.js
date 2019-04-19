@@ -87,14 +87,14 @@ if(pageSize&&currentPage){
 }
 
   postQuery.then().then(documents => {
-    fetchedPosts = document;
-    return Post.count()
+    fetchedPosts = documents;
+    return Post.countDocuments()
 
   }).then((count)=>{
                      res.status(200).json({
                        message:
                          "Posts fetched successfully!",
-                       posts: fetchedPosts;
+                       posts: fetchedPosts,
                        maxPosts: count
                      });
                    });
