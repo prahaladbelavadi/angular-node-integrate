@@ -38,7 +38,7 @@ import { AppRoutingModule } from "./app-routing.module";
     MatExpansionModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
