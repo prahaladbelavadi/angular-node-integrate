@@ -12,7 +12,7 @@ const app = express();
 
 mongoose
   .connect(
-    "mongodb+srv://admin:3LMVtL3qs1sJRreU@cluster0-njshn.mongodb.net/node-angular?retryWrites=true"
+    "mongodb+srv://admin:3LMVtL3qs1sJRreU@cluster0-njshn.mongodb.net/node-angular"
   )
   .then(() => {
     console.log("Connected to database!");
