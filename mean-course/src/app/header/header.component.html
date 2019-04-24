@@ -18,9 +18,7 @@
       </a>
     </li>
     <li *ngIf="userIsAuthenticated">
-      <a mat-button>
-        Log Out
-      </a>
+      <button mat-button (click)="onLogout()">Log Out</button>
     </li>
   </ul>
 </mat-toolbar>
