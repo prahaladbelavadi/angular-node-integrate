@@ -23,8 +23,9 @@ router.post("/signup", (req, res, next) => {
                 })
                 .catch(err => {
                     res.status(500).json({
-                        error: err
-                    })
+                            message: "Invalid Auth Credentials"
+                        }
+                    )
                 });
         })
 
@@ -68,12 +69,10 @@ let fetchedUser;
         })
         .catch((err) => {
             return res.status(401).json({
-                message: "Auth Failed"
+                message: "Invalid Auth Credentials"
             });
         });
 });
 
-
-router.post("")
 
 module.exports = router;
