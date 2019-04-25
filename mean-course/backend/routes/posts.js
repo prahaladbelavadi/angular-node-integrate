@@ -6,8 +6,6 @@ const extractFile = require("../middleware/file");
 
 const router = express.Router();
 
-
-
 router.post("", checkAuth, extractFile);
 
 router.put("/:id",checkAuth, extractFile);
